@@ -1,0 +1,675 @@
+/* dark theme */
+
+.dark {
+    color: white;
+    background: rgb(36, 36, 36);
+}
+
+.dark #app {
+    color: white;
+    background: rgb(36, 36, 36);
+}
+
+.dark p,
+.dark h2,
+.dark h4,
+.dark h1,
+.dark .currency,
+.dark .title,
+.dark .savings h2,
+.dark .balance h2
+ {
+    color: white;
+}
+
+.dark .alert,
+.dark .alert-danger
+{
+    animation: fadeOut 5s;
+    z-index: -1;
+    z-index: 2;
+    color: crimson;
+ }
+
+
+ .dark .navigation {
+    background: white;
+    color: #333;
+ }
+
+ .dark .navigation li,
+ .dark .navigation a,
+ .dark .navigation div {
+    background: none;
+    color: #333;
+ }
+
+ .dark .navigation form {
+    background: none;
+ }
+
+ .dark .navigation .btn {
+    background: crimson;
+    color: white;
+ }
+
+ .dark .bars-open,
+ .dark .bars-closed {
+    background: none;
+ }
+
+.dark nav {
+    color: white;
+    background: rgb(36, 36, 36);
+}
+
+
+
+#modal {
+    color: black;
+    background: white;
+}
+
+#modal div {
+    color: black;
+    background: white;
+}
+
+
+.dark * ,
+.dark .change,
+.dark  nav,
+.dark .profile, 
+.dark .info,
+.dark head,
+.dark .navigation .open
+.dark .profile-closed,
+.dark .transactions-page head,
+.dark .profile nav,
+.dark .profile .info .change
+ {
+    color: white;
+    background: rgb(36, 36, 36);
+}
+
+
+/* changing shadows in dark mode */
+
+.dark .closed-nav,
+.dark .CountriesDropdown,
+.dark .country-row,
+.dark .balance,
+.dark .savings,
+.dark .transactions-page head,
+.dark .transaction {
+    box-shadow: 0 4px 2px -2px black ;
+    border-bottom: solid 1px white;
+}
+
+
+/* Mobile version */
+/* white theme */
+.alert {
+   animation: fadeOut 5s;
+   z-index: -1;
+}
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: -25px;
+    width: 100%;
+    background: white;
+    
+   
+}
+
+
+.mobile-nav {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr .2fr;
+    margin-bottom: 25px;
+    height: 50px;
+    
+}
+
+.closed-nav {
+    border-bottom: solid 1px rgb(156, 156, 156);
+    box-shadow: 1px 1px 3px rgb(156, 156, 156) ;
+}
+
+
+
+.open-nav img {
+    position: relative;
+    z-index: -2;
+}
+
+
+
+
+.logo img {
+    position: absolute;
+    left: 0;
+    top: -150%;
+}
+
+.bars {
+    margin: 5px;
+    position: relative;
+    z-index: 5;
+    top: -2.5%;
+
+}
+.bars-closed {
+    color: #333;
+    transition: color 300ms;
+}
+.bars-open {
+    color: #333;
+    transition: color 300ms;
+}
+.navigation a {
+    color: white;
+}
+.navigation .open {
+    height: 500px;
+}
+.navigation {
+    position: absolute;
+    bottom: 0;
+    height: 250px;
+    width: 100%;
+    max-width: 100%;
+    background: #333;
+    color: white;
+    list-style: none;
+    text-align: center;
+    
+
+}
+
+.navigation li {
+    margin: 5px;
+    font-size: 19px;
+}
+
+.open {
+    transform: translateY(-100px);
+    opacity: 1;
+    transition: all 300ms;
+    z-index: 4;
+    
+}
+.closed {
+    transform: translateY(0px);
+    opacity: 0;
+    transition: all 300ms;
+    z-index: -1;
+}
+
+
+/* FORMS */
+
+.form-group {
+    position: relative;
+}
+
+.underline {
+    height: 1px;
+    width: 75%;
+    background: rgb(116, 116, 116);
+}
+.page-name {
+    margin-bottom: 25px;
+}
+
+.page-name h2 {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.eye-container{
+    position: relative;
+}
+
+.eye {
+    position: absolute;
+    display: flex;
+    float: right;
+    right: 0;
+    top: 25%;
+    margin-right: 10px;
+}
+
+
+.CountriesDropdown{
+    width: 100%;
+    margin: auto;
+    height: 200px;
+    box-shadow: 1px 1px 3px rgb(161, 161, 161);
+    max-width: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.displayed{
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.country-row {
+    position: relative;
+    z-index: 2;
+    padding: 5px;
+    box-shadow: 1px 1px 3px rgb(150, 150, 150);
+}
+
+.country-row:hover {
+    background: rgb(107, 107, 107);
+}
+
+
+
+/* END FORMS */
+
+
+/* Home page */
+.Home {
+    display: grid;
+    
+}
+
+
+
+/* BALANCE DIV */
+.balance {
+    display: block;
+    box-shadow: 1px 1px 3px rgb(119, 119, 119);
+    width: 95%;
+    margin: auto;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    transform: scale(1);
+    transition: transform 300ms;
+}
+
+.balance:active {
+    transform: scale(0.9);
+    transition: transform 300ms;
+}
+
+
+.currency  {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin: 5px;
+   align-items: center;
+   border-bottom: solid 1px rgb(145, 145, 145);
+   margin-bottom: 25px;
+}
+
+.currency h2 {
+    font-size: 19px;
+    color:rgb(7, 30, 163);
+    font-weight: bold;
+}
+
+
+.iban {
+    margin-top: -5px;
+    color: rgb(114, 114, 114);
+}
+
+.bank-info {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items:left;
+   text-align: left;
+   margin: 5px;
+}
+
+.balance-value {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.balance-value h5 {
+    font-weight: bold;
+}
+
+/* END BALANCE DIV */
+
+
+/* SAVING DIV */
+
+.savings {
+    display: block;
+    box-shadow: 1px 1px 3px rgb(119, 119, 119);
+    width: 95%;
+    margin: auto;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    transform: scale(1);
+    transition: transform 300ms;
+}
+
+
+.savings:active {
+    transform: scale(0.9);
+    transition: transform 300ms;
+}
+
+.savings .faplus {
+    color: rgb(0, 60, 255);
+    text-align: center;
+    margin-top: 5px;
+}
+.savings .title {
+    width: 95%;
+    margin: auto;
+    border-bottom: solid 1px rgb(107, 107, 107);
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.savings h2 {
+    font-size: 19px;
+    color:rgb(7, 30, 163);
+    font-weight: bold;
+}
+
+.savings h4 {
+    font-size: 19px;
+    align-items: center;
+}
+
+.savings:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: red;
+}
+
+.savings-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.savings-info p {
+    margin-left: 5px;
+}
+.user-and-value {
+    display: flex;
+    flex-direction: row;
+   
+}
+
+.user-and-value p {
+    margin-right: 25px;
+}
+
+.user-and-value h4 {
+    margin-right: 25px;
+}
+
+/* END SAVING DIV */
+
+option {
+    width: 100vw;
+}
+
+
+/* transactions */
+.transactions-page {
+    display: grid;
+    grid-template-rows: .2fr 1fr;
+    overflow-y: scroll;
+}
+
+
+
+.transactions-page nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    overflow-y: scroll;
+    
+}
+
+.transactions-page head {
+    display: block;
+    box-shadow:  0 4px 2px -2px gray;
+    margin-bottom: 25px;
+    position: fixed;
+    width: 100%;
+    background: white;
+    margin-bottom: 25px;
+   
+}
+
+.transactions-page .back {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.transactions-page .back h2 {
+    font-size: 19px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 2px;
+
+}
+
+.transactions-page .settings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 19px;
+}
+
+.transactions {
+    position: absolute;
+    top: 25%;
+    height: 65%;
+    /* transform: translateY(-35%); */
+    overflow-y: scroll;
+    z-index: -2;
+    width: 100%;
+    margin-bottom: 25px;
+   
+}
+ .settings svg {
+    margin-left: 15px;
+    margin-right: 5px;
+}
+.svg-inline--fa.fa-ellipsis-vertical {
+    font-size: 19px;
+}
+
+.back-to-home {
+    font-size: 24px;
+    
+}
+
+.transactions-page .user-info {
+    display: block;
+    margin: 5px;
+}
+
+.search-transactions {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.transactions-page .user-info h2 {
+    font-size:19px;
+    font-weight: bold;
+}
+
+.transactions-page .user-info .data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* transaction header */
+.transaction {
+    display: block;
+    box-shadow:  1px 2px 2px -1px gray;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    
+}
+
+.transaction-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.transaction-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.transaction-data h2 {
+    font-size: 19px;
+    font-weight: bold;
+    
+}
+
+.received-transaction {
+    display: block;
+    background: rgba(117, 252, 151, 0.438);
+    width: 75px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    
+}
+
+.transaction-page-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    float: left;
+}
+
+.transaction-page-btns button {
+    margin-right: 25px;
+    margin-bottom: 5px;
+}
+
+/* transaction form */
+.make-transaction nav {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+.make-transaction nav h2 {
+    font-size: 19px;
+    font-weight: bold;
+    margin-left: 25px;
+    top: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+
+/* profile section */
+
+.profile {
+    display: grid;
+    grid-template-rows: .5fr 2fr 1fr;
+   
+    height: 100%;
+    width: 100%;
+}
+
+.profile nav {
+    display: flex;
+    flex-direction: row;
+    
+    height: 50px;
+    background: white;
+}
+
+.profile nav svg {
+    font-size: 19px;
+    margin: 5px;
+    
+}
+.profile nav h2 {
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 25px;
+    line-height: 15px;
+    margin: 5px;
+}
+
+.profile .info {
+    display: block;
+    margin-top: 25px;
+}
+
+.profile .info .change {
+    display: block;
+    background: white;
+    border-bottom: solid 1px rgb(192, 192, 192);
+    margin: 0;
+    
+}
+
+
+.profile .info .change div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.profile .info .change h2 {
+    margin: 5px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+
+
+/* ANIMATIONS */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
