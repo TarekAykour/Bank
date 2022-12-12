@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
        'ENGINE': 'sql_server.pyodbc',
         'NAME': 'Bankapp',
-        'USER': 'Tarek',
-        'PASSWORD': 'defMOD768!?',
+        'USER': os.environ.get('username_db'),
+        'PASSWORD': os.environ.get('password_db'),
         'HOST': 'web-dev-tarek.database.windows.net',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
