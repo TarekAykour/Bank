@@ -8,6 +8,7 @@ from .models import User, Transaction
 import json
 from django.urls import reverse
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect
+from django.middleware.csrf import get_token
 from django.utils.decorators import method_decorator
 from functools import update_wrapper
 from django.http import Http404
@@ -19,7 +20,12 @@ import datetime
 
 
 
+
 # get all users
+
+
+def csrf(request):
+    return JsonResponse({'csrfToken': get_token(request)})
 
 @ensure_csrf_cookie
 @login_required
@@ -263,7 +269,7 @@ def register(request):
         
         elif not email  or len(email) < 12 or not email.strip() or len(email.strip()) < 12 or email.strip() in User.objects.all():
             return JsonResponse({"error":"Email invalid"}, status=400)
-        
+    
         elif not country:
             return JsonResponse({"error": "Please select country"}, status=400)
 

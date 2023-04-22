@@ -12,20 +12,25 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from corsheaders.defaults import default_headers
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env()
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gde=)1l!04d_$gjp$rcj#6bqi^@cziiowo5de8v#2aef^2x5oj'
+
+SECRET_KEY = env('SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['django-env.eba-ftwztd76.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['django-env.eba-ftwztd76.us-west-2.elasticbeanstalk.com', '127.0.0.1']
 
 
 # Application definition
@@ -82,17 +87,23 @@ WSGI_APPLICATION = 'Bank.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 # still need to change this 7:36 pm 17 nov 2022! set to sql
+# DATABASES = {
+#     'default': {
+#        'ENGINE': 'sql_server.pyodbc',
+#         'NAME': 'Bankapp',
+#         'USER': os.environ.get('username_db'),
+#         'PASSWORD': os.environ.get('password_db'),
+#         'HOST': 'web-dev-tarek.database.windows.net',
+#         'OPTIONS': {
+#             'driver': 'ODBC Driver 17 for SQL Server',
+            
+#         }
+#     }
+# }
 DATABASES = {
     'default': {
-       'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'Bankapp',
-        'USER': os.environ.get('username_db'),
-        'PASSWORD': os.environ.get('password_db'),
-        'HOST': 'web-dev-tarek.database.windows.net',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-            
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -129,8 +140,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-STATIC_URL = '/static/'
+# STATIC_ROOT = '/static/'
 
+STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static/')
 ]
@@ -151,7 +164,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'api.User'
 
 
-# disable on production
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, 'static/')
+]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+MEDIA_URL = '/images/'
 
 
+CORS_ORIGIN_ALLOW_ALL = True
 

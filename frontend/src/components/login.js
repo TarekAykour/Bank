@@ -3,6 +3,7 @@ import { useHistory,Link } from "react-router-dom";
 import CSRFToken from "./csrftoken"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faEye, faEyeDropper, faEyeSlash} from "@fortawesome/free-solid-svg-icons"
+import axios, {isCancel, AxiosError} from 'axios';
 
 function Login(){
     const [username, setUsername] = useState()
@@ -37,17 +38,16 @@ function Login(){
         return cookieValue;
     }
     const csrftoken = getCookie('csrftoken');
+    
 
     const handleSubmit = (event) => {
+      
         fetch('/api/login', {
             credentials:'include', 
             method: 'POST',
-            mode: 'same-origin',
             headers: {
-                'Accept': 'application/json',
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
                 'X-CSRFToken': csrftoken,
-                
                 
             },
             body: JSON.stringify({

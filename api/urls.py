@@ -14,6 +14,7 @@ urlpatterns = [
     path("update_user/<int:id>", views.update_user, name="update_user"),
     path("delete_user/<int:id>", views.delete_user, name="delete_user"),
     path("savings_add", views.savings_add, name="savings_add"),
-    path("savings_remove", views.savings_remove, name="savings_remove")
+    path("savings_remove", views.savings_remove, name="savings_remove"),
+    path('csrf/', views.csrf),
     
 ]

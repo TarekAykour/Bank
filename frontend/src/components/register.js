@@ -122,7 +122,7 @@ function Register(){
 
         
     return (
-        <div>
+        <div className="register-form">
             <div className="page-name">
                 <h2>Register</h2>
                 <div className="underline"></div>
